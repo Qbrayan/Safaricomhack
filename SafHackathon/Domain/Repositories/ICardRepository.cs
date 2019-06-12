@@ -11,8 +11,9 @@ namespace SafHackathon.Domain.Repositories
         Task<IEnumerable<Card>> ListAsync();
         Task<Card> InsertAsync(string entity);
         Task<IEnumerable<Card>> GetBySerialAsync(string serial);
-        Task<Card> Update(string status);
-        Task<int> DeleteAsync(string status);
+        Task<Card> Update(string serial);
+        Task<IEnumerable<Card>> GetActive();
+        Task<int> DeleteAsync();
         Task<IEnumerable<Card>> GetByDate();
     }
 }

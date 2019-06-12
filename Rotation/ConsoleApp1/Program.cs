@@ -39,14 +39,14 @@ namespace ConsoleApp1
             {
                 return a;
             }
-
             if (d > a.Length)
             {
                 d = d % a.Length;
             }
 
+            //slice the first part
             int[] firstPart = a.Take(a.Length - d).ToArray();
-
+            //slice the secondpart
             int[] secondPart = a.Skip(a.Length - d).ToArray();
 
             Array.Reverse(firstPart);

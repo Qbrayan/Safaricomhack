@@ -40,6 +40,20 @@ namespace SafHackathon.Controllers
             return Ok(list);
         }
 
+        [HttpGet("Scratch/Active")]
+        public async Task<IActionResult> GetActive()
+        {
+            var list = await _cardService.GetActive();
+
+            if (list.Count() == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(list);
+        }
+
+
 
         // POST: api/Card
         [HttpPost]
@@ -66,13 +80,13 @@ namespace SafHackathon.Controllers
 
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("Status/{status}")]
-        public async Task<IActionResult> Delete(string status)
+        [HttpDelete("Status")]
+        public async Task<IActionResult> Delete()
         {
-            var result = await _cardService.DeleteAsync(status);
+            var result = await _cardService.DeleteAsync();
 
             if (result ==0)
-                return BadRequest("Not Found");
+                return NotFound();
 
             return Ok();
         }

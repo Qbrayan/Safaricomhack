@@ -13,9 +13,11 @@ namespace SafHackathon.Domain.Services
         Task<IEnumerable<Card>> GetBySerialAsync(string serial);
         Task<IEnumerable<Card>> GetByDate();
 
-        Task<Card> Update(string status);
+        Task<IEnumerable<Card>> GetActive();
 
-        Task<int> DeleteAsync(string status);
+        Task<Card> Update(string serial);
+
+        Task<int> DeleteAsync();
 
     }
 

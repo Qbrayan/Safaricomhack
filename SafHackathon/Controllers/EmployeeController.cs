@@ -27,7 +27,10 @@ namespace SafHackathon.Controllers
                     employees = JsonConvert.DeserializeObject<List<Employee>>(apiResponse);
                 }
             }
-            return Ok(JsonConvert.SerializeObject(employees));
+            string json = JsonConvert.SerializeObject(employees);
+
+            System.IO.File.WriteAllText(@"C:\employees.txt", json);
+            return Ok();
         }
 
         // GET: api/Employee/5

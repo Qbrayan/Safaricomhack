@@ -26,9 +26,9 @@ namespace SafHackathon.Services
             return await _cardRepository.InsertAsync(entity);
         }
 
-        public async Task<Card> Update(string status)
+        public async Task<Card> Update(string serial)
         {
-            return await _cardRepository.Update(status);
+            return await _cardRepository.Update(serial);
         }
 
         public async Task<IEnumerable<Card>> GetBySerialAsync(string serial)
@@ -41,9 +41,14 @@ namespace SafHackathon.Services
             return await _cardRepository.GetByDate();
         }
 
-        public async Task<int> DeleteAsync(string status)
+        public async Task<IEnumerable<Card>> GetActive()
         {
-            return await _cardRepository.DeleteAsync(status);
+            return await _cardRepository.GetActive();
+        }
+
+        public async Task<int> DeleteAsync()
+        {
+            return await _cardRepository.DeleteAsync();
         }
 
     }
