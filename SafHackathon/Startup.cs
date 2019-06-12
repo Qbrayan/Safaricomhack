@@ -39,6 +39,8 @@ namespace SafHackathon
 
             services.AddScoped<ICardRepository, CardRepository>();
             services.AddScoped<ICardService, CardService>();
+            services.AddScoped<IEmployeeService,EmployeeService>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         }
 
 

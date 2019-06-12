@@ -7,10 +7,10 @@ namespace SafHackathon.Domain.Models
 {
     public class Employee
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string employee_name { get; set; }
-        public string employee_salary { get; set; }
-        public string employee_age { get; set; }
+        public double employee_salary { get; set; }
+        public int employee_age { get; set; }
 
         public string profile_image { get; set; }
     }
